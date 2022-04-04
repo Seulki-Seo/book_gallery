@@ -1,0 +1,250 @@
+@charset "utf-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+img {
+	max-width: 100%;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	color: #222;
+	font-family: "Nanum Myeongjo", serif;
+}
+
+#container {
+	width: 100%;
+	height: 100vh;
+	min-width: 1600px;
+	min-height: 950px;
+	background: linear-gradient(#d9e5e5 0%, #ebdbdb 60%);
+	display: flex;
+}
+
+#container #header {
+	width: 20%;
+	height: 100%;
+	position: relative;
+	padding: 10rem 8rem;
+	z-index: 3;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#container #header h1 {
+	font-size: 2.8rem;
+	font-weight: 100;
+	line-height: 1;
+	color: #777;
+}
+
+#container #nav {
+	position: absolute;
+	top: 10rem;
+	right: 6rem;
+}
+
+#container #nav ul {
+	display: flex;
+}
+
+#container #nav li a {
+	font-size: 1.8rem;
+	color: #888;
+	margin-left: 1.5rem;
+	margin-right: 1.5rem;
+}
+
+#container #main {
+	width: 80%;
+	height: 100%;
+	position: relative;
+	z-index: 1;
+	display: flex;
+	padding-top: 13rem;
+}
+
+#container #main section {
+	flex: 1;
+	padding: 7rem 4rem 10rem;
+	position: relative;
+	opacity: 0.6;
+	transition: opacity 1s, flex 1s;
+	cursor: pointer;
+}
+
+#container #main section::before {
+	content: "";
+	display: block;
+	width: 80%;
+	height: 95%;
+	position: absolute;
+	left: -200%;
+	top: 0;
+	opacity: 0;
+	background-color: rgba(255, 255, 255, 0.4);
+	transition: all 0.7s;
+}
+
+#container #main section .inner {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
+	position: relative;
+}
+
+#container #main section .inner .text {
+	width: 100%;
+	transition: 0.5s;
+}
+
+#container #main section .inner .text h2 {
+	position: relative;
+	font-size: 2.4rem;
+	line-height: 1;
+	font-weight: 100;
+	margin-bottom: 4rem;
+	padding-top: 4rem;
+}
+
+#container #main section .inner .text h2::after {
+	content: "";
+	display: block;
+	width: 4rem;
+	height: 0.2rem;
+	background-color: #fff;
+	transition: 1.5s;
+	margin-top: 2rem;
+}
+
+#container #main section .inner .text p {
+	font-size: 1.4rem;
+	color: #777;
+}
+
+#container #main section .inner .text .desc {
+	display: none;
+}
+
+#container #main section .inner figure {
+	width: 100%;
+	height: 40rem;
+	box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.5);
+	transform-origin: left center;
+	transition: 1s;
+}
+
+#container #main section .inner figure img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transform: scale(1.1);
+}
+
+/* HOVER */
+#container #main section:hover {
+	flex: 1.5;
+	opacity: 1;
+	z-index: 2;
+}
+
+#container #main section:hover::before {
+	left: 0;
+	opacity: 1;
+}
+
+#container #main section:hover .text {
+	width: 80%;
+}
+
+#container #main section:hover .text h2 {
+	font-size: 2.8rem;
+	padding-top: 0;
+	width: 90%;
+}
+
+#container #main section:hover .inner .text h2::after {
+	width: 120%;
+	background-color: #EE9696;
+}
+
+#container #main section:hover .inner figure {
+	filter: saturate(120%);
+	transform: translatey(3rem);
+}
+
+#container aside {
+	background-color: rgba(255, 255, 255, 0.85);
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: -100%;
+	opacity: 0;
+	z-index: 3;
+	padding: 20rem 7rem 15rem 20rem;
+	display: flex;
+	justify-content: space-between;
+	transition: 1s;
+}
+
+#container aside.on {
+	left: 0;
+	opacity: 1;
+}
+
+#container aside .text {
+	width: 30%;
+	height: 100%;
+}
+
+#container aside .text h1 {
+	font-size: 3rem;
+	font-weight: 100;
+	color: #333;
+	margin-top: 2rem;
+}
+
+#container aside .text p {
+	font-size: 1.6rem;
+	margin: 2rem 0 5rem;
+	color: #555;
+}
+
+#container aside figure img {
+	width: 80%;
+}
+
+#container aside .btn_close {
+	font-size: 1.6rem;
+	color: #EE9696;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+#container #footer {
+	position: fixed;
+	left: 1.5rem;
+	bottom: 1.5rem;
+	color: #fff;
+}
